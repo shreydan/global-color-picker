@@ -4,8 +4,8 @@ import pyscreenshot as ImageGrab
 from PIL import Image
 
 def checkColor(xy):
-    boundingbox = (xy[0],xy[1],xy[0]+1,xy[1]+1)
-    im = ImageGrab.grab(bbox=boundingbox)
+    bbox = (xy[0],xy[1],xy[0]+1,xy[1]+1)
+    im = ImageGrab.grab(bbox=bbox)
     rgbim = im.convert('RGB')
     r,g,b = rgbim.getpixel((0,0))
     print('rgb value: ',(r,g,b))
